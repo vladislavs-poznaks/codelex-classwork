@@ -34,7 +34,7 @@ class Product
     {
         return 'Product: '
             . $this->name
-            . ($showPrice ? ', price: ' . number_format($this->price / 100, 2) : '')
+            . ($showPrice ? ', price: $' . number_format($this->price / 100, 2) : '')
             . ($showCount ? ', ' . $this->count . ' pcs.' : '');
     }
 
