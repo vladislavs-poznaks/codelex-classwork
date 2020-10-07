@@ -1,0 +1,46 @@
+body {
+    background-color: #c1dee5;
+}
+
+h1, h2, .game-status, .options {
+    text-align: center;
+    font-family: Helvetica;
+
+    color: #447391;
+}
+
+h1 {
+    font-size: 60px;
+}
+
+h2 {
+    font-size: 35px;
+}
+
+h1, .game-status, .chosen-options, .options {
+    width: 100%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 50px;
+}
+
+.chosen-option {
+    width: 200px;
+}
+
+.vs-image {
+    height: 200px;
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+button {
+    width: 150px;
+    border: solid 0px;
+    background: #c1dee5;
+}
+
+button:hover {
+    transform: scale(1.15);
+    transition: .3s ease;
+}
