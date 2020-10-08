@@ -46,11 +46,16 @@
         }
 
         .input-label-field {
-            width: 80%;
+            width: 100%;
             margin-bottom: 25px;
             margin-left: 0;
             margin-right: 0;
-            justify-content: space-evenly;
+            text-align: left;
+            padding: 0 35px;
+        }
+
+        .button {
+            text-align: center;
         }
 
         .label {
@@ -67,7 +72,7 @@
         .input-form, .search-form, .results {
             background-color: #F2FBFF;
             border-radius: 15px;
-            padding: 15px;
+            padding: 15px 0;
             width: 800px;
             margin: 10px auto;
         }
@@ -116,8 +121,10 @@
             <input type="text" name="address" id="address" required class="input">
         </div>
 
+        <div class="button">
+            <button type="submit">Submit</button>
+        </div>
 
-        <button type="submit">Submit</button>
     </form>
 </div>
 
@@ -131,7 +138,10 @@
             <input type="text" name="search-code" id="search-code" required class="input">
         </div>
 
-        <button type="submit">Submit</button>
+        <div class="button">
+            <button type="submit">Submit</button>
+        </div>
+
     </form>
 </div>
 
