@@ -13,12 +13,12 @@ class Currency implements ModelInterface
         $this->rate = $rate;
     }
 
-    public function getCurrency(): string
+    public function currency(): string
     {
         return $this->currency;
     }
 
-    public function getRate(): float
+    public function rate(): float
     {
         return $this->rate;
     }
