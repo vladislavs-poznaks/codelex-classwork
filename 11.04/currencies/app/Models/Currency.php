@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-class Currency
+class Currency implements ModelInterface
 {
     private string $currency;
     private float $rate;
@@ -21,14 +21,6 @@ class Currency
     public function getRate(): float
     {
         return $this->rate;
-    }
-
-    public static function createFromXML(array $data): Currency
-    {
-        return new self(
-            $data['value'][0]['value'],
-            (float) $data['value'][1]['value']
-        );
     }
 
     public static function create(array $data): Currency

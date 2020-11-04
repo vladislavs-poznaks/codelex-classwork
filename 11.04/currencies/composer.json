@@ -11,7 +11,8 @@
         "vlucas/phpdotenv": "^5.2",
         "respect/validation": "^2.1",
         "imangazaliev/didom": "^1.16",
-        "sabre/xml": "^2.2"
+        "sabre/xml": "^2.2",
+        "nesbot/carbon": "^2.41"
     },
     "minimum-stability": "stable"
 }

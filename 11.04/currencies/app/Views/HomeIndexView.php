@@ -6,7 +6,7 @@
     <button type="submit">UPDATE CURRENCIES!</button>
 </form>
 
-<?php foreach ($currencies as $currency): ?>
+<?php foreach ($currencies->all() as $currency): ?>
     <h3>
         <?php echo $currency->getCurrency() . ': ' . $currency->getRate(); ?>
     </h3>

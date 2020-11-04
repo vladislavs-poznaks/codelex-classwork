@@ -2,89 +2,22 @@
 
 namespace App\Services;
 
-use App\Models\Currency;
-use Sabre\Xml\Service;
+use App\Models\CurrencyCollection;
+use App\Repositories\CurrencyRepository;
 
 class CurrencyService
 {
-    public function getFromBank()
+    public function getAll(): CurrencyCollection
     {
-        $xml = file_get_contents('https://www.bank.lv/vk/ecb.xml');
+        $repository = new CurrencyRepository();
 
-        $service = new Service();
-        $result = $service->parse($xml);
-
-        $currenciesData = $result[1]['value'];
-
-        $currencies = [];
-
-        foreach ($currenciesData as $currency) {
-            $currencies[] = Currency::createFromXML($currency);
-        }
-
-        return $currencies;
+        return $repository->getCurrencies();
     }
 
-    public function createDB(): void
+    public function updateAll(): void
     {
-        $currenciesQuery = query()
-            ->select('*')
-            ->from('currencies')
-            ->execute()
-            ->fetchAllAssociative();
+        $repository = new CurrencyRepository();
 
-        if (count($currenciesQuery) === 0) {
-            $currencies = $this->getFromBank();
-            /**
-             * @var Currency $currency
-             */
-            foreach ($currencies as $currency) {
-                query()
-                    ->insert('currencies')
-                    ->values([
-                        'currency' => ':currency',
-                        'rate' => ':rate'
-                    ])
-                    ->setParameters([
-                        'currency' => $currency->getCurrency(),
-                        'rate' => $currency->getRate(),
-                    ])
-                    ->execute();
-            }
-        }
-    }
-
-    public function updateDB(): void
-    {
-        $currencies = $this->getFromBank();
-
-        /**
-         * @var Currency $currency
-         */
-        foreach ($currencies as $currency) {
-            query()
-                ->update('currencies')
-                ->set('rate', $currency->getRate())
-                ->where('currency = :currency')
-                ->setParameter('currency', $currency->getCurrency())
-                ->execute();
-        }
-    }
-
-    public function getAll(): array
-    {
-        $currencies = [];
-
-        $currenciesQuery = query()
-            ->select('*')
-            ->from('currencies')
-            ->execute()
-            ->fetchAllAssociative();
-
-        foreach ($currenciesQuery as $currency) {
-            $currencies[] = Currency::create($currency);
-        }
-
-        return $currencies;
+        $repository->updateCurrencies();
     }
 }
