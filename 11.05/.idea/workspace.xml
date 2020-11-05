@@ -19,15 +19,7 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3f3e24dd-26c5-4c67-874a-a645e7300232" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.env.example" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/FooterView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/HeaderView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Views/IndexView.php" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/composer.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
-    </list>
+    <list default="true" id="3f3e24dd-26c5-4c67-874a-a645e7300232" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -69,7 +61,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1604563870664</updated>
-      <workItem from="1604563871827" duration="12656000" />
+      <workItem from="1604563871827" duration="12906000" />
     </task>
     <servers />
   </component>
